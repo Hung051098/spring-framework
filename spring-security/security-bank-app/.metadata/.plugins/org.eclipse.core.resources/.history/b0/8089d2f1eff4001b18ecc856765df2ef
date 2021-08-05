@@ -1,0 +1,15 @@
+package com.hung.security.rest;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/notice")
+public class LoginRest {
+	List<Customer> customers = customerRepository.findByEmail(user.getName());
+	if (customers.size() > 0) {
+		return customers.get(0);
+	}else {
+		return null;
+	}
+}

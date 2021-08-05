@@ -1,0 +1,20 @@
+package com.hung.security.rest;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@RequestMapping
+public class LoansRest {
+
+	@Autowired
+	private LoanRepository loanRepository;
+	
+	@PostMapping("/myLoans")
+	public List<Loans> getLoanDetails(@RequestBody Customer customer) {
+		List<Loans> loans = loanRepository.findByCustomerIdOrderByStartDtDesc(customer.getId());
+		if (loans != null ) {
+			return loans;
+		}else {
+			return null;
+		}
+	}
+}

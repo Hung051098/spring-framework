@@ -1,0 +1,5 @@
+package com.example.springsecurityjwt.rest;
+
+public class LoginRest {
+
+}
