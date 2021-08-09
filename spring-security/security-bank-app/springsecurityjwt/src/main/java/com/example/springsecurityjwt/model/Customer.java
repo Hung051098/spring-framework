@@ -32,7 +32,7 @@ public class Customer {
 	private String email;
 
 	@Column
-	private String role;
+	private String role ;
 
 	@Column
 	private String pwd;

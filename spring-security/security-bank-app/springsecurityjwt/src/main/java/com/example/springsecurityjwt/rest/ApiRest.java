@@ -11,4 +11,16 @@ public class ApiRest {
 	{
 		return "hello";
 	}
+
+	@GetMapping("/user")
+	public String user()
+	{
+		return "user";
+	}
+
+	@GetMapping("/admin")
+	public String admin()
+	{
+		return "admin";
+	}
 }

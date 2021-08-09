@@ -15,7 +15,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.example.springsecurityjwt.configuration.SecurityLoginService;
+import com.example.springsecurityjwt.configuration.UserDetailsServiceImpl;
 import com.example.springsecurityjwt.util.JwtToken;
 
 import io.jsonwebtoken.ExpiredJwtException;
@@ -24,7 +24,7 @@ import io.jsonwebtoken.ExpiredJwtException;
 public class JwtRequestFilter extends OncePerRequestFilter {
 
 	@Autowired
-	private SecurityLoginService securityLoginService;
+	private UserDetailsServiceImpl securityLoginService;
 
 	@Autowired
 	JwtToken jwtToken;

@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 public class CustomerUserDetails implements UserDetails{
@@ -13,9 +14,15 @@ public class CustomerUserDetails implements UserDetails{
 	@Autowired
 	Customer customer;
 	
+	
+	// set quyền là role ở đây
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		List<GrantedAuthority> authorities = new ArrayList<>();
+		GrantedAuthority authority = new SimpleGrantedAuthority(customer.getRole());
+		GrantedAuthority authority2 = new SimpleGrantedAuthority("READ");
+		authorities.add(authority);
+		authorities.add(authority2);
 		return authorities;
 	}
 
