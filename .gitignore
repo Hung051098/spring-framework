@@ -7,7 +7,7 @@ conf
 .project
 *.idea
 logs/*
-/.metadata/
+spring-security/security-bank-app/.metadata/
 target
 bin
 logs
@@ -27,6 +27,4 @@ gradlew
 *.vscode
 .sonarlint
 /.recommenders/
-
-AdminService/.factorypath
 .csv
